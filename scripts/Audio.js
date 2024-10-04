@@ -6,7 +6,6 @@ export default class Audio {
     this.imgSrc = imgSrc;
     this.performer = performer;
     Audio.audioList.push(this);
-    console.log(Audio.audioList);
   }
 }
 

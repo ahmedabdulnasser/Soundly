@@ -9,7 +9,8 @@ export default class Player {
     playBtn,
     nextBtn,
     prevBtn,
-    progressContainer
+    progressContainer,
+    volumeSlider
   ) {
     this.audioElement = audioElement;
     this.titleElement = titleElement;
@@ -17,6 +18,7 @@ export default class Player {
     this.playerThumbnail = playerThumbnail;
     this.progressContainer = progressContainer;
     this.playBtn = playBtn;
+    this.volumeSlider = volumeSlider;
     this.isDragging = false;
     this.isRepeatClicked = false;
 
@@ -46,10 +48,11 @@ export default class Player {
     });
     document.querySelector("#shuffle").addEventListener("click", () => {
       this.randomize();
+      console.log("New Playlist:", Audio.audioList);
     });
     document.querySelector("#repeat").addEventListener("click", () => {
       this.repeat();
-      console.log(this.isRepeatClicked);
+      console.log("Repeat Mode: ", this.isRepeatClicked);
     });
     /* To prevent performance issues, where the event is triggered many times per second,
      * we apply throttle of 50 seconds to make sure the function can only run every 50 ms
@@ -66,6 +69,10 @@ export default class Player {
 
     document.addEventListener("mouseup", () => {
       this.isDragging = false;
+    });
+
+    volumeSlider.addEventListener("input", (e) => {
+      this.changeVolume(e.target.value);
     });
   }
   loadAudio(activeAudioIdx) {
@@ -171,6 +178,10 @@ export default class Player {
       : (this.isRepeatClicked = true);
   }
 
+  changeVolume(val) {
+    this.audioElement.volume = val;
+  }
+
   setActiveAudioIndex(index) {
     this.activeAudioIdx = index;
     this.loadAudio(this.activeAudioIdx);
@@ -191,5 +202,6 @@ export const player = new Player(
   document.querySelector(".player #play"),
   document.querySelector(".player #next"),
   document.querySelector(".player #prev"),
-  document.querySelector(".player .progress-container")
+  document.querySelector(".player .progress-container"),
+  document.querySelector(".player #volume-slider")
 );
