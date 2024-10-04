@@ -170,9 +170,20 @@ export default class Player {
       ? (this.isRepeatClicked = false)
       : (this.isRepeatClicked = true);
   }
+
+  setActiveAudioIndex(index) {
+    this.activeAudioIdx = index;
+    this.loadAudio(this.activeAudioIdx);
+    this.play();
+  }
+
+  getActiveAudioIndex(){
+    return this.activeAudioIdx;
+  }
 }
 
-new Player(
+
+export const player = new Player(
   document.querySelector(".player audio"),
   document.querySelector(".player #title"),
   document.querySelector(".player #performer"),
