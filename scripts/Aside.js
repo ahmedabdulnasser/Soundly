@@ -4,9 +4,8 @@ import { player } from './Player.js';
 
 
 export default class AudioListDisplay {
-    constructor(playerInstance) {
+    constructor() {
     this.container = document.querySelector('.Aside-list');
-    // this.player = playerInstance;
     this.displayList();
 }
 

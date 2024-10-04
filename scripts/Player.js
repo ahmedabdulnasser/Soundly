@@ -1,5 +1,7 @@
+import AudioListDisplay from "./Aside.js";
 import Audio from "./Audio.js";
 import { throttle } from "./utils.js";
+
 export default class Player {
   constructor(
     audioElement,
@@ -10,7 +12,9 @@ export default class Player {
     nextBtn,
     prevBtn,
     progressContainer,
-    volumeSlider
+    volumeSlider,
+    plus30,
+    minus30
   ) {
     this.audioElement = audioElement;
     this.titleElement = titleElement;
@@ -19,9 +23,11 @@ export default class Player {
     this.progressContainer = progressContainer;
     this.playBtn = playBtn;
     this.volumeSlider = volumeSlider;
+    this.plus30 = plus30;
+    this.minus30 = minus30;
     this.isDragging = false;
     this.isRepeatClicked = false;
-
+  
     this.activeAudioIdx = Math.floor(Math.random() * Audio.audioList.length);
     this.loadAudio(this.activeAudioIdx);
 
@@ -74,6 +80,12 @@ export default class Player {
     volumeSlider.addEventListener("input", (e) => {
       this.changeVolume(e.target.value);
     });
+    plus30.addEventListener("click", ()=> {
+      this.movePlus30();
+    });
+    minus30.addEventListener("click", ()=> {
+      this.moveMinus30();
+    });
   }
   loadAudio(activeAudioIdx) {
     const activeAudio = Audio.audioList[activeAudioIdx];
@@ -95,6 +107,7 @@ export default class Player {
   next() {
     this.activeAudioIdx = (this.activeAudioIdx + 1) % Audio.audioList.length;
     this.loadAudio(this.activeAudioIdx);
+    this.updateDOM();
     this.play();
   }
   back() {
@@ -102,7 +115,14 @@ export default class Player {
       (this.activeAudioIdx - 1) % Audio.audioList.length
     );
     this.loadAudio(this.activeAudioIdx);
+    this.updateDOM();
     this.play();
+  }
+  movePlus30(){
+    this.audioElement.currentTime += 30;
+  }
+  moveMinus30(){
+    this.audioElement.currentTime -= 30;
   }
   updateProgress(e) {
     const { duration, currentTime } = e.srcElement;
@@ -171,6 +191,7 @@ export default class Player {
       array[j] = temp;
     }
     this.loadAudio(this.activeAudioIdx);
+    this.updateDOM();
   }
   repeat() {
     this.isRepeatClicked
@@ -191,8 +212,13 @@ export default class Player {
   getActiveAudioIndex(){
     return this.activeAudioIdx;
   }
-}
 
+  updateDOM(){
+    const container = document.querySelector('.Aside-list');
+    container.innerHTML = ''
+    audioDisplay.displayList();
+  }
+}
 
 export const player = new Player(
   document.querySelector(".player audio"),
@@ -203,5 +229,9 @@ export const player = new Player(
   document.querySelector(".player #next"),
   document.querySelector(".player #prev"),
   document.querySelector(".player .progress-container"),
-  document.querySelector(".player #volume-slider")
+  document.querySelector(".player #volume-slider"),
+  document.querySelector(".player #plus-30"),
+  document.querySelector(".player #minus-30")
 );
+
+const audioDisplay = new AudioListDisplay();
