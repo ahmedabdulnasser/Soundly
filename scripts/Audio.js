@@ -21,3 +21,37 @@ const newAudio2 = new Audio(
   "../assets/audio/2/thumbnail.jpg",
   "Yasser El-Dossary"
 );
+const newAudio3 = new Audio(
+  "El Muminoon",
+  "../assets/audio/3/سورة المؤمنون - ياسر الدوسري - (كاملة).mp3",
+  "../assets/audio/3/thumbnail.jpg",
+  "Yasser El-Dossary"
+);
+
+new Audio(
+  "El Muminoon",
+  "../assets/audio/3/سورة المؤمنون - ياسر الدوسري - (كاملة).mp3",
+  "../assets/audio/3/thumbnail.jpg",
+  "Yasser El-Dossary"
+);
+
+new Audio(
+  "El Muminoon",
+  "../assets/audio/3/سورة المؤمنون - ياسر الدوسري - (كاملة).mp3",
+  "../assets/audio/3/thumbnail.jpg",
+  "Yasser El-Dossary"
+);
+
+new Audio(
+  "El Muminoon",
+  "../assets/audio/3/سورة المؤمنون - ياسر الدوسري - (كاملة).mp3",
+  "../assets/audio/3/thumbnail.jpg",
+  "Yasser El-Dossary"
+);
+
+new Audio(
+  "El Muminoon",
+  "../assets/audio/3/سورة المؤمنون - ياسر الدوسري - (كاملة).mp3",
+  "../assets/audio/3/thumbnail.jpg",
+  "Yasser El-Dossary"
+);

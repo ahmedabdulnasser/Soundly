@@ -1,6 +1,6 @@
 .player-container {
   display: flex;
-  width: 100%;
+  /* width: 6%; */
   justify-content: center;
 }
 .player {
@@ -8,11 +8,16 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 500px;
-  height: 600px;
+  width: fit-content;
+  box-sizing: border-box;
+  padding: 15px;
   gap: 15px;
   background-color: whitesmoke;
   border-radius: 30px;
+  /* Box-shadow resembling a subtle floating audio player */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1), 0 12px 40px rgba(0, 0, 0, 0.05); /* Dual shadow for depth */
+
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 .progress-container {
   box-sizing: border-box;
@@ -42,4 +47,71 @@
   height: 15px;
   background-color: white;
   border: 2px solid var(--primary);
+}
+.controls {
+  margin: 10px;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr); /* 5 equal columns for the first row */
+  grid-template-rows: auto auto; /* Two rows for the controls */
+  gap: 10px; /* Space between the buttons and slider */
+  justify-items: center; /* Center items horizontally */
+  align-items: center; /* Align items vertically */
+}
+
+#volume-slider {
+  grid-column: span 3; /* Volume slider spans across 3 columns */
+  width: 100%; /* Slider stretches to fit */
+  cursor: pointer;
+  accent-color: black;
+}
+
+/* Align Shuffle and Repeat buttons across the grid properly */
+#shuffle {
+  grid-column: 1 / 2; /* Shuffle button spans 2 columns */
+}
+
+#repeat {
+  grid-column: 2 / 3; /* Repeat button spans 2 columns */
+}
+
+.cover-container {
+  position: relative;
+  width: fit-content;
+  height: fit-content;
+  border-radius: 50%;
+  background-color: transparent;
+  animation: rotate360 10s linear infinite;
+  animation-play-state: paused;
+  /* box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1), 0 12px 40px rgba(0, 0, 0, 0.05); */
+}
+.play {
+  animation-play-state: running;
+}
+.cover-container::before {
+  position: absolute;
+  content: "";
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  width: 75px;
+  height: 75px;
+  border-radius: 50%; /* Make the pseudo-element circular */
+  /* Box-shadow resembling a subtle floating audio player */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1), 0 12px 40px rgba(0, 0, 0, 0.05); /* Dual shadow for depth */
+  opacity: 0.9;
+}
+#cover {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1), 0 12px 40px rgba(0, 0, 0, 0.05); /* Dual shadow for depth */
+}
+@keyframes rotate360 {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }

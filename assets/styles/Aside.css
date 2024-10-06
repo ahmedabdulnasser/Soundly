@@ -1,39 +1,62 @@
+/* Aside Container Styles */
 .Aside-container {
-    position: fixed;
-    left: 0;
-    top: 0;
-    width: 20%;
-    height: 60%;
-    background-color: #ffffff;
-    box-shadow: -2px 0 10px rgba(0, 0, 0);
-    padding: 20px; 
-    overflow-y: auto; /*Enable vertical scrolling if content overflows*/
-    }
+  display: flex;
+  flex-direction: column; /* Align music items vertically */
+  align-items: center; /* Center content horizontally */
+  justify-content: flex-start; /* Align items to the top */
+  width: 100%; /* Set to full width of its container */
+  max-width: 320px; /* Limit max-width for better responsiveness */
+  /* min-height: 400px; Set a reasonable height */
+  height: 550px;
+  overflow-y: auto;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+  padding: 20px; /* Padding inside the container */
+  background-color: #ffffff;
+  border-radius: 20px; /* Reduced border radius for better look */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1), 0 12px 40px rgba(0, 0, 0, 0.05);
+  box-sizing: border-box; /* Ensure padding and borders are included in width and height */
+}
+.Aside-container::-webkit-scrollbar {
+  display: none;
+}
 
-  /* Music Item Styles */
+/* Music Item Styles */
 .music-item {
-    display: flex;
-    align-items: center;
-    padding: 10px; /* Padding for spacing */
-    margin-bottom: 10px; /* Space between music items */
-    cursor: pointer; /* Pointer cursor on hover */
-    transition: background-color 0.3s; /* Smooth background transition */
-    gap: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Space out elements evenly */
+  width: 100%;
+  padding: 15px; /* Padding for spacing */
+  margin-bottom: 15px; /* Space between music items */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: background-color 0.3s ease, color 0.3s ease; /* Smooth background and text transition */
+  border-radius: 10px; /* Smoother rounded corners */
+  box-sizing: border-box;
+  gap: 1rem;
 }
 
 .music-item:hover {
-    background-color: #f0f0f0; /* Light gray background on hover */
-    }
+  background-color: #f0f0f0; /* Light gray background on hover */
+}
 
 .music-item img {
-    width: 30%;
-    border-radius: 5px; /* Rounded corners for images */
-    margin-right: 10px; /* Space between image and text */
-    }
+  width: 50px;
+  height: 50px; /* Set fixed height to keep aspect ratio */
+  border-radius: 8px; /* Rounded corners for images */
+  margin-right: 15px; /* Space between image and text */
+}
+
 .music-item.active {
-    background-color: rgb(0, 0, 0);
-    color: #ffffff;
-    }
+  background-color: rgb(0, 0, 0);
+  color: #ffffff;
+  border-radius: 10px;
+}
+
 .music-item.active img {
-    opacity: 0.7; /* Dim the image when active */
-    }
+  opacity: 0.7; /* Dim the image when active */
+}
+
+/* Media Query for Mobile Devices */
+@media (max-width: 768px) {
+}

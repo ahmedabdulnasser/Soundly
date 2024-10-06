@@ -1,0 +1,23 @@
+:root {
+  --primary: #fe8daa;
+}
+
+body {
+  background-color: gray;
+}
+
+button {
+  background-color: black;
+  color: white;
+  border: black;
+  border-radius: 10px;
+  width: 75px;
+  height: 40px;
+  font-size: 1rem;
+  cursor: pointer;
+  opacity: 1;
+}
+
+button:hover {
+  opacity: 0.8;
+}

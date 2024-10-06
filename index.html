@@ -4,44 +4,60 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Soundly</title>
+    <!-- Styles -->
     <link rel="stylesheet" href="./assets/styles/reset.css" />
     <link rel="stylesheet" href="./assets/styles/globals.css" />
     <link rel="stylesheet" href="./assets/styles/Player.css" />
     <link rel="stylesheet" href="./assets/styles/Aside.css" />
+    <link rel="stylesheet" href="./assets/styles/responsive.css" />
+    <!-- Tailwind -->
+    <!-- <link rel="stylesheet" href="./assets/styles/output.css" /> -->
   </head>
   <body>
-    <div class="player-container">
-      <div class="player">
-        <img id="cover" draggable="false" />
-        <h2 id="title"></h2>
-        <span id="performer"></span>
-        <audio></audio>
-        <div class="progress-container">
-          <div class="progress"></div>
-          <span class="progress-current-time">00:00</span>
-        </div>
-        <div class="controls">
-          <button id="prev"><<</button>
-          <button id="minus-30">-30</button>
-          <button id="play">></button>
-          <button id="plus-30">+30</button>
-          <button id="next">>></button>
-          <button id="shuffle">Shuffle</button>
-          <button id="repeat">Set on Repeat</button>
-          <input
-            id="volume-slider"
-            type="range"
-            min="0"
-            max="1"
-            step="0.01"
-            value="1"
-          />
+    <div class="audio-player">
+      <div class="Aside-container">
+        <div class="Aside-list"></div>
+      </div>
+      <div class="player-container">
+        <div class="player">
+          <div class="cover-container">
+            <img id="cover" alt="Cover" />
+          </div>
+          <h2 id="title"></h2>
+          <span id="performer"></span>
+          <audio></audio>
+          <div class="progress-container">
+            <div class="progress"></div>
+            <span class="progress-current-time">00:00</span>
+          </div>
+          <div class="controls">
+            <button id="minus-30">
+              <i class="fa-calendar-minus fa-solid"></i>
+            </button>
+            <button id="prev"><i class="fa-backward fa-solid"></i></button>
+            <button id="play"><i class="fa-play fa-solid"></i></button>
+            <button id="next"><i class="fa-forward fa-solid"></i></button>
+            <button id="plus-30">
+              <i class="fa-calendar-plus fa-solid"></i>
+            </button>
+            <button id="shuffle"><i class="fa-shuffle fa-solid"></i></button>
+            <button id="repeat"><i class="fa-repeat fa-solid"></i></button>
+            <input
+              id="volume-slider"
+              type="range"
+              min="0"
+              max="1"
+              step="0.01"
+              value="0.8"
+            />
+          </div>
         </div>
       </div>
     </div>
-    <div class="Aside-container">
-      <div class="Aside-list"></div>
-    </div>
   </body>
   <script src="./scripts/main.js" type="module"></script>
+  <script
+    src="https://kit.fontawesome.com/9101e1fc82.js"
+    crossorigin="anonymous"
+  ></script>
 </html>

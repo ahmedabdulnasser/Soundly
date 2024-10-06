@@ -1,0 +1,110 @@
+/* Existing styles remain unchanged */
+
+@media (max-width: 768px) {
+  /* Adjusting the Aside container */
+  .audio-player {
+    display: flex;
+    /* flex-direction: column-reverse; */
+    flex-wrap: nowrap;
+  }
+
+  /* Player container adjustments */
+  .player-container {
+    width: 100%; /* Full width on mobile */
+    /* padding: 10px; Add some padding */
+    height: 50%;
+  }
+  .controls {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto;
+    gap: 10px;
+    grid-template-areas:
+      "prev play next"
+      "minus repeat plus"
+      ". shuffle .";
+  }
+  #prev {
+    grid-area: prev;
+  }
+  #play {
+    grid-area: play;
+  }
+  #next {
+    grid-area: next;
+  }
+  #minus {
+    grid-area: minus;
+  }
+  #plus {
+    grid-area: plus;
+  }
+  #repeat {
+    grid-area: repeat;
+  }
+  #shuffle {
+    grid-area: shuffle;
+  }
+  /* Cover image adjustments */
+  #cover {
+    width: 200px; /* Smaller cover size */
+    height: 200px; /* Maintain aspect ratio */
+  }
+
+  /* Progress container */
+  .progress-container {
+    width: 100%; /* Full width for progress container */
+    padding: 0 10px;
+  }
+  .progress-current-time {
+    display: block;
+    margin: 5px 0;
+  }
+
+  /* Control buttons */
+  .controls {
+    grid-template-columns: repeat(3, 1fr); /* Reduce to 3 columns */
+    gap: 5px; /* Reduce gap for smaller screens */
+  }
+
+  /* Adjusting font sizes for titles and performer names */
+  h2 {
+    font-size: 1rem; /* Smaller font size */
+  }
+
+  #performer {
+    font-size: 0.9rem; /* Smaller font size */
+  }
+
+  /* Volume slider adjustments */
+  #volume-slider {
+    grid-column: 1 / 4; /* Slider spans all columns */
+  }
+  .audio-player {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+  .Aside-container {
+    flex-direction: row;
+    align-items: flex-start;
+    width: fit-content;
+    overflow-y: auto;
+    max-width: 100%;
+    min-height: none;
+    height: fit-content;
+    padding: 0;
+    margin: 0;
+  }
+
+  .Aside-list {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+  }
+  .music-item {
+    flex-direction: column;
+  }
+  .music-item img {
+    display: none;
+  }
+}

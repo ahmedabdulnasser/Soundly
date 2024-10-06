@@ -1,4 +1,4 @@
-import AudioListDisplay from "./Aside.js";
+import Aside from "./Aside.js";
 import Audio from "./Audio.js";
 import { throttle } from "./utils.js";
 
@@ -27,9 +27,10 @@ export default class Player {
     this.minus30 = minus30;
     this.isDragging = false;
     this.isRepeatClicked = false;
-  
+
     this.activeAudioIdx = Math.floor(Math.random() * Audio.audioList.length);
     this.loadAudio(this.activeAudioIdx);
+    this.changeVolume(0.8);
 
     // Events
     audioElement.addEventListener("timeupdate", (e) => {
@@ -80,10 +81,10 @@ export default class Player {
     volumeSlider.addEventListener("input", (e) => {
       this.changeVolume(e.target.value);
     });
-    plus30.addEventListener("click", ()=> {
+    plus30.addEventListener("click", () => {
       this.movePlus30();
     });
-    minus30.addEventListener("click", ()=> {
+    minus30.addEventListener("click", () => {
       this.moveMinus30();
     });
   }
@@ -96,12 +97,15 @@ export default class Player {
   }
   play() {
     this.audioElement.classList.add("play");
-    this.playBtn.innerText = "||";
+    this.playerThumbnail.parentNode.classList.add("play");
+    this.playBtn.innerHTML = `<i class="fa-solid fa-pause"></i>`;
     this.audioElement.play();
   }
   pause() {
     this.audioElement.classList.remove("play");
-    this.playBtn.innerText = ">";
+    this.playerThumbnail.parentNode.classList.remove("play");
+
+    this.playBtn.innerHTML = `<i class="fa-solid fa-play"></i>`;
     this.audioElement.pause();
   }
   next() {
@@ -118,10 +122,10 @@ export default class Player {
     this.updateDOM();
     this.play();
   }
-  movePlus30(){
+  movePlus30() {
     this.audioElement.currentTime += 30;
   }
-  moveMinus30(){
+  moveMinus30() {
     this.audioElement.currentTime -= 30;
   }
   updateProgress(e) {
@@ -209,13 +213,13 @@ export default class Player {
     this.play();
   }
 
-  getActiveAudioIndex(){
+  getActiveAudioIndex() {
     return this.activeAudioIdx;
   }
 
-  updateDOM(){
-    const container = document.querySelector('.Aside-list');
-    container.innerHTML = ''
+  updateDOM() {
+    const container = document.querySelector(".Aside-list");
+    container.innerHTML = "";
     audioDisplay.displayList();
   }
 }
@@ -234,4 +238,4 @@ export const player = new Player(
   document.querySelector(".player #minus-30")
 );
 
-const audioDisplay = new AudioListDisplay();
+const audioDisplay = new Aside();
