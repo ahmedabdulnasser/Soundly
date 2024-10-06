@@ -198,9 +198,14 @@ export default class Player {
     this.updateDOM();
   }
   repeat() {
-    this.isRepeatClicked
-      ? (this.isRepeatClicked = false)
-      : (this.isRepeatClicked = true);
+    if (this.isRepeatClicked) {
+      this.isRepeatClicked = false;
+      document.querySelector("#repeat").innerHTML = `<i class="fa-repeat fa-solid"></i>`
+    } 
+    else {
+      this.isRepeatClicked = true;
+      document.querySelector("#repeat").innerHTML = `<i class="fa-solid fa-repeat" style="color: #B197FC;"></i>`;
+    }
   }
 
   changeVolume(val) {
