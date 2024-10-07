@@ -12,37 +12,37 @@ export default class Audio {
 const newAudio1 = new Audio(
   "El Menshawy Simulation",
   "https://ahmedabdulnasser.github.io/Soundly/assets/audio/1/El-Menshawy-Abdelrahman_El-Zawary.m4a",
-  "../assets/audio/1/thumbnail.jpg",
+  "https://ahmedabdulnasser.github.io/Soundly/assets/audio/1/thumbnail.jpg",
   "Abdelrahman El-Zawawy"
 );
 const newAudio2 = new Audio(
   "El Muminoon",
   "https://ahmedabdulnasser.github.io/Soundly/assets/audio/2/surah_al_muminoon_yasser_dossary.mp3",
-  "../assets/audio/2/thumbnail.jpg",
+  "https://ahmedabdulnasser.github.io/Soundly/assets/audio/2/thumbnail.jpg",
   "Yasser El-Dossary"
 );
 const newAudio3 = new Audio(
   "El Muminoon",
-  "https://ahmedabdulnasser.github.io/Soundly/assets/audio/2/surah_al_muminoon_yasser_dossary.mp3",
-  "../assets/audio/3/thumbnail.jpg",
+  "https://ahmedabdulnasser.github.io/Soundly/assets/audio/3/surah_al_muminoon_yasser_dossary.mp3",
+  "https://ahmedabdulnasser.github.io/Soundly/assets/3/thumbnail.jpg",
   "Yasser El-Dossary"
 );
 
 new Audio(
   "El Muminoon",
-  "https://ahmedabdulnasser.github.io/Soundly/assets/audio/2/surah_al_muminoon_yasser_dossary.mp3",
-  "../assets/audio/3/thumbnail.jpg",
+  "https://ahmedabdulnasser.github.io/Soundly/assets/audio/3/surah_al_muminoon_yasser_dossary.mp3",
+  "https://ahmedabdulnasser.github.io/Soundly/assets/audio/3/thumbnail.jpg",
   "Yasser El-Dossary"
 );
 new Audio(
   "El Muminoon",
-  "https://ahmedabdulnasser.github.io/Soundly/assets/audio/2/surah_al_muminoon_yasser_dossary.mp3",
-  "../assets/audio/3/thumbnail.jpg",
+  "https://ahmedabdulnasser.github.io/Soundly/assets/audio/3/surah_al_muminoon_yasser_dossary.mp3",
+  "https://ahmedabdulnasser.github.io/Soundly/assets/audio/3/thumbnail.jpg",
   "Yasser El-Dossary"
 );
 new Audio(
   "El Muminoon",
-  "https://ahmedabdulnasser.github.io/Soundly/assets/audio/2/surah_al_muminoon_yasser_dossary.mp3",
-  "../assets/audio/3/thumbnail.jpg",
+  "https://ahmedabdulnasser.github.io/Soundly/assets/audio/3/surah_al_muminoon_yasser_dossary.mp3",
+  "https://ahmedabdulnasser.github.io/Soundly/assets/audio/3/thumbnail.jpg",
   "Yasser El-Dossary"
 );
