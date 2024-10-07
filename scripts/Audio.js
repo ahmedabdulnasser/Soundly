@@ -24,7 +24,7 @@ const newAudio2 = new Audio(
 const newAudio3 = new Audio(
   "El Muminoon",
   "https://ahmedabdulnasser.github.io/Soundly/assets/audio/3/surah_al_muminoon_yasser_dossary.mp3",
-  "https://ahmedabdulnasser.github.io/Soundly/assets/3/thumbnail.jpg",
+  "https://ahmedabdulnasser.github.io/Soundly/assets/audio/3/thumbnail.jpg",
   "Yasser El-Dossary"
 );
 
